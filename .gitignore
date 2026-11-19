@@ -1,0 +1,10 @@
+TASK_STATE.md
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# 你自己的节目档案与嘉宾资料不要进仓库
+kit.toml
+guests/
+out/
+*.tmp.html

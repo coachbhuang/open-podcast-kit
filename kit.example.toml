@@ -1,0 +1,72 @@
+# open-podcast-kit 节目档案
+# 复制成 kit.toml 放在你的播客工作目录（任意上级目录也行），所有 skill 与脚本都从这里读。
+# 没有 kit.toml 时脚本用本文件里的默认值。
+
+[show]
+name = "我的播客"
+host = "主持人"
+# 一句话说清：节目给谁听、听完能得到什么
+audience = "学生和职场新人"
+# 开场白模板。{topic} 是"今天，我们……"那一句，AI 每期给多个备选让你挑；{guest} 是嘉宾称呼
+opening = "hello大家好我是{host}，欢迎收听{show}。我们请各行各业的从业者讲第一手职业故事，让{audience}认识各行各业的工作内容、求职门槛、晋升机制、薪资水平和行业趋势。今天，我们{topic}。请到的嘉宾是{guest}，请先跟听众介绍一下你自己吧！"
+interview_minutes = 90
+# 视频播客填 true：录前消息会告知对方要录画面
+video = true
+# 邀约时给嘉宾的权益（照你的实际情况改）
+guest_benefits = [
+  "一份可以放进作品集的个人访谈音视频",
+  "节目平台对其产品/公司的曝光",
+]
+# 内容红线：出题、文案、剪辑都要遵守
+red_lines = [
+  "不使用嘉宾对具体同事点名的负面评价",
+  "不做可能断章取义、损害嘉宾的剪辑或文案",
+]
+
+[prep]
+# 题库预设：presets/<format>/question-bank.md；想用自己的题库就填一个文件路径
+format = "career"
+question_bank = ""
+segments = 5
+# 第一版手卡每段主线题数量（只判 prep_v1.md，删改后的版本不判）
+questions_per_segment = [8, 10]
+jargon_range = [5, 7]
+opening_options = 5
+# 题面与每条追问各自最多几个问号
+max_question_marks = 2
+# 提纲区会原样发给嘉宾，这些内部词一个都不能出现
+tactic_words = ["短视频时刻", "逼具体", "装傻", "翻译时刻", "切片", "呼吸口", "情绪探针", "出口桥", "入口桥", "完播率", "hook", "金句卡", "留扣子", "扣子"]
+# 题目角度标签（写在手卡文末内部区，用来看哪类题最常被你留下）
+angles = ["入行路径", "薪酬回报", "日常强度", "行业揭秘", "高光案例", "适配与代价", "未来出路", "建议反思", "个人故事"]
+personas = ["在校生", "职场新人"]
+min_angle_kinds = 6
+min_per_persona = 3
+# 发给嘉宾的题单 PDF 页脚
+pdf_footer = "{show}"
+
+[prep.money]
+# 职业访谈预设：薪酬题必须落在第几段的前几题（关掉就设 enabled = false）
+enabled = true
+segment = 2
+within_first = 2
+pattern = "薪酬|聊钱|多少钱|bonus|收入|到手"
+
+[loudness]
+video_target_lufs = -14.0
+audio_target_lufs = -16.0
+# 交付底线：真峰值不得高于此值
+max_true_peak = -1.0
+# 与目标差多少以内算达标
+tolerance_lu = 1.0
+# 分段检查：任意两段积分响度之差超过此值即不合格
+max_segment_spread = 2.0
+
+[review]
+silence_db = -35
+silence_min_s = 2.5
+# 字幕两条之间空档超过这么多秒就报出来
+srt_gap_s = 8
+# 期望的成片规格（留空则不比对）
+expect_width = 0
+expect_height = 0
+expect_fps = 0
