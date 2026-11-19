@@ -1,0 +1,11 @@
+{
+  "name": "open-podcast-kit",
+  "owner": { "name": "Yizhi Huang" },
+  "plugins": [
+    {
+      "name": "open-podcast-kit",
+      "source": "./",
+      "description": "访谈类播客工具包：嘉宾调研、访谈手卡与题单、邀约消息、成片响度校正与机器审片。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "open-podcast-kit",
+  "version": "0.1.0",
+  "description": "访谈类播客工具包：嘉宾调研、访谈手卡与题单、邀约消息、成片响度校正与机器审片。",
+  "license": "MIT",
+  "keywords": ["podcast", "interview", "loudness", "qc", "播客", "访谈"]
+}
