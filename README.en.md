@@ -26,6 +26,11 @@ What makes the prep card different:
 - **What the guest sees stays clean**: the PDF only takes the question outline; internal notes (where to push for specifics, which moment could become a short clip) physically can't get in, and the checker blocks any leak.
 - **Automated checks**: question-mark count, questions per segment, where the money question sits, third-person slips, jargon count, number of opening options. One command before you hand it in.
 - **A pacing template**: 90 minutes in five segments, alternating hard information with emotional beats, with natural bridges between segments.
+- **A web editor**: no hand-editing markdown. In the browser you can delete, mark optional, rewrite, annotate, add and reorder questions (across segments too). Every save writes a new version, deleted questions go to an archive at the end so you can bring them back, and the checker runs automatically.
+
+  ```bash
+  python3 skills/interview-prep/scripts/prep_card_serve.py --open
+  ```
 
 ### After editing: final-cut QC
 
