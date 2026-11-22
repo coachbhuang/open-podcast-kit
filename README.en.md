@@ -8,7 +8,26 @@ This kit comes out of a real, weekly Chinese-language career-interview video pod
 
 It runs as a set of [Claude Code](https://claude.com/claude-code) skills. Once installed, you just say "help me prepare for my interview with this guest" and Claude follows the workflow.
 
-> The prompts and question bank are written in Chinese today. The scripts and structure are language-agnostic; an English question-bank preset is on the roadmap, and contributions are welcome.
+> **Language support today:** loudness correction and final-cut QC work on any language. The interview-prep prompts, question bank and card checker are Chinese-first; an English preset is on the roadmap, and contributions are welcome.
+
+![The web prep-card editor: rewrite, delete and reorder questions, with checks on every save](docs/editor.png)
+
+## Try it in 30 seconds
+
+No Claude Code needed, just Python 3.11+. This uses the fictional guest in the repo (the demo card is in Chinese):
+
+```bash
+git clone https://github.com/coachbhuang/open-podcast-kit.git
+cd open-podcast-kit
+python3 skills/interview-prep/scripts/check_prep_card.py examples/demo-guest/prep_v1.md --config kit.example.toml
+python3 skills/interview-prep/scripts/prep_card_serve.py demo-guest --guests examples --config kit.example.toml --open
+```
+
+The first command checks the card; the second opens the editor above. With [ffmpeg](https://ffmpeg.org) installed, measure your own episode (works in any language):
+
+```bash
+python3 skills/normalize-loudness/scripts/loudness.py measure your-episode.mp4
+```
 
 ## What's inside
 
