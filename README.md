@@ -8,6 +8,25 @@
 
 它以 [Claude Code](https://claude.com/claude-code) 的 skill 形式运行：装好之后，你用自然语言说"帮我准备一下这位嘉宾的采访"，Claude 就会按这套流程做。
 
+![网页版手卡编辑器：逐题改写、删除、调顺序，保存时自动检查](docs/editor.png)
+
+## 30 秒试一下
+
+不用装 Claude Code，只要 Python 3.11 或更新版本。下面用仓库自带的虚构嘉宾：
+
+```bash
+git clone https://github.com/coachbhuang/open-podcast-kit.git
+cd open-podcast-kit
+python3 skills/interview-prep/scripts/check_prep_card.py examples/demo-guest/prep_v1.md --config kit.example.toml
+python3 skills/interview-prep/scripts/prep_card_serve.py demo-guest --guests examples --config kit.example.toml --open
+```
+
+第一条检查手卡，第二条打开上图的编辑器。装了 [ffmpeg](https://ffmpeg.org) 的话，再测一下你自己节目的响度：
+
+```bash
+python3 skills/normalize-loudness/scripts/loudness.py measure 你的成片.mp4
+```
+
 ## 里面有什么
 
 ### 录制前：访谈准备
