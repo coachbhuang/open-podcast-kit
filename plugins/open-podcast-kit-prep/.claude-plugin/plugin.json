@@ -1,0 +1,11 @@
+{
+  "name": "open-podcast-kit-prep",
+  "displayName": "Open Podcast Kit Interview Prep",
+  "version": "0.1.0",
+  "description": "Prepare interview podcasts with Claude: research guests, write personalized question cards, and draft outreach messages. Instructions and question bank are Chinese-first.",
+  "author": { "name": "Yizhi Huang" },
+  "homepage": "https://github.com/coachbhuang/open-podcast-kit",
+  "repository": "https://github.com/coachbhuang/open-podcast-kit",
+  "license": "MIT",
+  "keywords": ["podcast", "interview", "guest-research", "outreach", "播客", "访谈"]
+}
