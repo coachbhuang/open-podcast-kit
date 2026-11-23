@@ -7,6 +7,7 @@ Claude Code skills for interview podcasts: guest research, interview prep cards,
 - `skills/<name>/SKILL.md` plus optional `references/` and `scripts/`; scripts are standalone Python 3.9+ with no third-party dependencies except optional Playwright (PDF export) and ffmpeg on the PATH.
 - `lib/kitconf.py` loads the user's `kit.toml` over `kit.example.toml`; every show-specific value comes from there, never hard-coded in a skill or script.
 - `presets/<format>/question-bank.md` holds question banks; `examples/` holds fictional demo material only.
+- `plugins/open-podcast-kit-prep/` is the Claude directory edition. It must stay text-only (Markdown, JSON, PNG, LICENSE) with no scripts or install commands; `tests/test_directory_plugin.py` enforces this.
 
 ## Rules
 
