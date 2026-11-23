@@ -12,7 +12,7 @@
 
 ## 30 秒试一下
 
-不用装 Claude Code，只要 Python 3.11 或更新版本。下面用仓库自带的虚构嘉宾：
+不用装 Claude Code，只要 Python 3.9 或更新版本，Mac 上装过 git 就已经有了。下面用仓库自带的虚构嘉宾：
 
 ```bash
 git clone https://github.com/coachbhuang/open-podcast-kit.git
@@ -58,7 +58,7 @@ python3 skills/normalize-loudness/scripts/loudness.py measure 你的成片.mp4
 
 ## 快速开始
 
-需要：[Claude Code](https://claude.com/claude-code)、Python 3.11 或更新版本、[ffmpeg](https://ffmpeg.org)（审片和响度工具用）。导出题单 PDF 可选装 Playwright。
+需要：[Claude Code](https://claude.com/claude-code)、Python 3.9 或更新版本、[ffmpeg](https://ffmpeg.org)（审片和响度工具用）。导出题单 PDF 可选装 Playwright。
 
 **1. 安装**
 

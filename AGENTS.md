@@ -4,7 +4,7 @@ Claude Code skills for interview podcasts: guest research, interview prep cards,
 
 ## Layout
 
-- `skills/<name>/SKILL.md` plus optional `references/` and `scripts/`; scripts are standalone Python 3.11+ with no third-party dependencies except optional Playwright (PDF export) and ffmpeg on the PATH.
+- `skills/<name>/SKILL.md` plus optional `references/` and `scripts/`; scripts are standalone Python 3.9+ with no third-party dependencies except optional Playwright (PDF export) and ffmpeg on the PATH.
 - `lib/kitconf.py` loads the user's `kit.toml` over `kit.example.toml`; every show-specific value comes from there, never hard-coded in a skill or script.
 - `presets/<format>/question-bank.md` holds question banks; `examples/` holds fictional demo material only.
 

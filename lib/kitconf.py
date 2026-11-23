@@ -15,8 +15,8 @@ except ModuleNotFoundError:  # Python 3.10 及更早
     try:
         import tomli as tomllib  # type: ignore[no-redef]
     except ModuleNotFoundError:
-        sys.exit("需要 Python 3.11 或更新版本（或先 pip install tomli）。当前是 "
-                 f"{sys.version.split()[0]}；macOS 可以 brew install python@3.12")
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import minitoml as tomllib  # type: ignore[no-redef]
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULTS = REPO_ROOT / "kit.example.toml"

@@ -14,7 +14,7 @@ It runs as a set of [Claude Code](https://claude.com/claude-code) skills. Once i
 
 ## Try it in 30 seconds
 
-No Claude Code needed, just Python 3.11+. This uses the fictional guest in the repo (the demo card is in Chinese):
+No Claude Code needed, just Python 3.9+ (already on a Mac that has git). This uses the fictional guest in the repo (the demo card is in Chinese):
 
 ```bash
 git clone https://github.com/coachbhuang/open-podcast-kit.git
@@ -60,7 +60,7 @@ What makes the prep card different:
 
 ## Quick start
 
-You need [Claude Code](https://claude.com/claude-code), Python 3.11+, and [ffmpeg](https://ffmpeg.org) for the audio and QC tools. Playwright is optional, for PDF export.
+You need [Claude Code](https://claude.com/claude-code), Python 3.9+, and [ffmpeg](https://ffmpeg.org) for the audio and QC tools. Playwright is optional, for PDF export.
 
 1. **Install**, in Claude Code:
    ```
