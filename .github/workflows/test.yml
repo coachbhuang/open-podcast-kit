@@ -9,13 +9,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
+      # Runs before pytest is installed: on 3.9 pytest would pull in tomli and hide the built-in reader.
+      - name: Demo prep card passes its own checker
+        run: python skills/interview-prep/scripts/check_prep_card.py examples/demo-guest/prep_v1.md --config kit.example.toml
       - run: pip install pytest
       - name: Unit tests
         run: python -m pytest -q tests
-      - name: Demo prep card passes its own checker
-        run: python skills/interview-prep/scripts/check_prep_card.py examples/demo-guest/prep_v1.md
