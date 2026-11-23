@@ -4,6 +4,8 @@
 
 [English](README.en.md)
 
+> An AI toolkit for people who make interview podcasts. It helps research guests, prepare interview questions, draft outreach messages, correct loudness, and check a final cut before publishing. Interview prep is Chinese-first, while the audio and video checks work in any language. See the [English README](README.en.md).
+
 这套工具来自一档真实在更新的中文职业访谈视频播客。它不是从零设想出来的：手卡上的每一条规则，都是 AI 出稿、主持人亲手改了几十轮之后，把"主持人每次都要改的地方"收成的标准。
 
 它以 [Claude Code](https://claude.com/claude-code) 的 skill 形式运行：装好之后，你用自然语言说"帮我准备一下这位嘉宾的采访"，Claude 就会按这套流程做。
@@ -90,10 +92,20 @@ Claude Code 版本较旧时分两步：先 `/plugin marketplace add coachbhuang/
 2. 在 `kit.toml` 里把 `[prep].question_bank` 指向它；
 3. 不需要"薪酬题必须在第二段"这条检查的，把 `[prep.money].enabled` 设成 `false`；角度标签清单也可以改。
 
+## 它会运行和连接什么
+
+- **本机脚本**：手卡检查、编辑器、响度和审片都在你的电脑上运行，不带统计上报，也不会自己上传文件。
+- **ffmpeg / ffprobe**：读取你指定的音视频。响度校正默认另存为 `_loudnorm` 新文件，不改原文件；审片抽帧图写到本机文件夹。
+- **网页编辑器**：只监听本机 `127.0.0.1`，只读写嘉宾目录里的手卡版本；加 `--open` 时打开你的默认浏览器。
+- **题单 PDF**：可选的 Playwright 在本机生成。
+- **Claude**：你交给 Claude 的简历、手卡和对话，按你的 Claude 账号设置处理。
+- **联网调研**：`guest-research` 在 Claude 有联网工具时会搜索嘉宾公开资料，搜索词可能包含嘉宾姓名和公司。
+- **逐字稿工具**：致谢里的第三方工具不内置、不自动安装。你自己装好并使用时，它才会访问小宇宙、Apple Podcasts、YouTube 或你给的音频地址。
+
 ## 隐私
 
 - 嘉宾资料默认放在工作目录的 `guests/` 下，`.gitignore` 已排除，别提交到公开仓库。
-- 所有工具在你自己的电脑上运行，不会把嘉宾资料发到任何第三方（Claude 本身的对话除外）。
+- 除上一节列出的 Claude、联网搜索和你自选的逐字稿工具外，本工具包不会把嘉宾资料发到别处。
 - 邀约和录前消息只出草稿，发送永远由你本人完成。
 
 ## 致谢

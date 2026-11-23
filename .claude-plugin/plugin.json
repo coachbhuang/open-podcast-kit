@@ -1,7 +1,11 @@
 {
   "name": "open-podcast-kit",
-  "version": "0.2.0",
-  "description": "访谈类播客工具包：嘉宾调研、访谈手卡与题单、邀约消息、成片响度校正与机器审片。",
+  "displayName": "Open Podcast Kit",
+  "version": "0.2.1",
+  "description": "AI toolkit for interview podcasts: guest research, prep cards, outreach drafts, loudness correction and final-cut QC. Interview prep is Chinese-first; audio and video checks work in any language.",
+  "author": { "name": "Yizhi Huang" },
+  "homepage": "https://github.com/coachbhuang/open-podcast-kit",
+  "repository": "https://github.com/coachbhuang/open-podcast-kit",
   "license": "MIT",
   "keywords": ["podcast", "interview", "loudness", "qc", "播客", "访谈"]
 }

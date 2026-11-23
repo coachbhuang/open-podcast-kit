@@ -1,6 +1,6 @@
 # open-podcast-kit
 
-Claude Code skills for interview podcasts: guest research, interview prep cards, outreach messages, loudness correction and final-cut QC. This file holds instructions for coding agents working on this repository; `CLAUDE.md` is a link to it.
+Claude Code skills for interview podcasts: guest research, interview prep cards, outreach messages, loudness correction and final-cut QC. This file holds instructions for coding agents working on this repository; `CLAUDE.md` imports it.
 
 ## Layout
 

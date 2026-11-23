@@ -70,9 +70,19 @@ You need [Claude Code](https://claude.com/claude-code), Python 3.9+, and [ffmpeg
 2. **Describe your show**: copy `kit.example.toml` into your podcast folder as `kit.toml` and fill in show name, host, audience, opening line, guest benefits and content red lines.
 3. **Use it**: hand Claude a guest's résumé and ask for a prep card. To see the output first, look at `examples/demo-guest/` (a fictional guest).
 
+## What it runs and connects to
+
+- **Local scripts**: the card checker, editor, loudness and QC tools run on your computer. They have no telemetry and do not upload files on their own.
+- **ffmpeg / ffprobe**: read the media you point them at. Loudness correction saves a new `_loudnorm` file by default and leaves the original alone. QC contact sheets are written to a local folder.
+- **Web editor**: listens only on `127.0.0.1` and only reads and writes prep-card versions in the guest folder. With `--open`, it opens your default browser.
+- **Question sheet PDF**: optional Playwright renders it locally.
+- **Claude**: résumés, cards and conversations you give Claude are handled under your Claude account settings.
+- **Web research**: when Claude has web tools, `guest-research` searches for the guest's public information. Search terms may include the guest's name and company.
+- **Transcript tool**: the third-party tool in Credits is not bundled or installed automatically. If you install and use it, it contacts Xiaoyuzhou, Apple Podcasts, YouTube or the audio URL you provide.
+
 ## Privacy
 
-Guest material lives under `guests/` in your own folder (git-ignored). Everything runs on your machine. Messages are drafts only; you always send them yourself.
+Guest material lives under `guests/` in your own folder (git-ignored). Apart from Claude, web search and any transcript tool you choose, this kit does not send guest material anywhere. Messages are drafts only; you always send them yourself.
 
 ## Credits
 
