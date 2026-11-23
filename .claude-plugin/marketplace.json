@@ -1,11 +1,12 @@
 {
   "name": "open-podcast-kit",
+  "description": "AI tools for people who make interview podcasts.",
   "owner": { "name": "Yizhi Huang" },
   "plugins": [
     {
       "name": "open-podcast-kit",
       "source": "./",
-      "description": "访谈类播客工具包：嘉宾调研、访谈手卡与题单、邀约消息、成片响度校正与机器审片。"
+      "description": "AI toolkit for interview podcasts: guest research, prep cards, outreach drafts, loudness correction and final-cut QC. Interview prep is Chinese-first; audio and video checks work in any language."
     }
   ]
 }
