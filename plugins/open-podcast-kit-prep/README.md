@@ -27,6 +27,12 @@ Prepare better interview podcasts with Claude. This plugin helps you research a 
 - **Optional transcript tool:** the third-party tool named in Credits is not included. Claude must ask before you install or use it, and the tool's own documentation explains what it connects to.
 - **Messages:** outreach and pre-interview messages are drafts only. You always send them yourself.
 
+Read the full [Privacy Policy](PRIVACY.md).
+
+## Support and security
+
+For help, bugs or security reports, [open a GitHub issue](https://github.com/coachbhuang/open-podcast-kit/issues). Please do not include guest information or other private details in an issue.
+
 ## Want the full toolkit?
 
 The [open-podcast-kit repository](https://github.com/coachbhuang/open-podcast-kit) also has an automatic prep-card checker, a local web editor, loudness correction and final-cut QC. Those tools are programs, so they are not part of this plugin.

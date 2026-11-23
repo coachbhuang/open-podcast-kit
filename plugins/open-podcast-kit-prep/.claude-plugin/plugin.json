@@ -6,6 +6,8 @@
   "author": { "name": "Yizhi Huang" },
   "homepage": "https://github.com/coachbhuang/open-podcast-kit",
   "repository": "https://github.com/coachbhuang/open-podcast-kit",
+  "privacyPolicyUrl": "https://github.com/coachbhuang/open-podcast-kit/blob/main/plugins/open-podcast-kit-prep/PRIVACY.md",
+  "supportUrl": "https://github.com/coachbhuang/open-podcast-kit/issues",
   "license": "MIT",
   "keywords": ["podcast", "interview", "guest-research", "outreach", "播客", "访谈"]
 }
