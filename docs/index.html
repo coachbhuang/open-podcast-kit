@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>访谈题单检查器</title>
+<meta name="description" content="粘贴访谈题目，自动检查问题，并导出不带内部备注的嘉宾题单。免注册，内容不离开你的浏览器。">
+<meta property="og:title" content="访谈题单检查器">
+<meta property="og:description" content="粘贴访谈题目，自动检查问题，并导出不带内部备注的嘉宾题单。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coachbhuang.github.io/open-podcast-kit/">
+<meta property="og:image" content="https://coachbhuang.github.io/open-podcast-kit/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="30" height="30">访谈题单检查器</a>
+    <a class="star" href="https://github.com/coachbhuang/open-podcast-kit" rel="noopener">在 GitHub 上查看</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>发给嘉宾之前，先查一遍题单</h1>
+    <p>粘贴你的访谈题目，马上看到哪里问得太多、哪里露了内部备注，再导出一份干净的嘉宾题单。</p>
+    <p class="privacy"><span aria-hidden="true">●</span> 免注册。内容只在你的浏览器里处理，这个页面不会上传它。</p>
+  </section>
+
+  <div class="workspace">
+    <section class="panel input-panel" aria-labelledby="input-title">
+      <div class="panel-head">
+        <h2 id="input-title">你的题目</h2>
+        <div class="actions">
+          <button type="button" id="sample" class="quiet">填入示例</button>
+          <button type="button" id="clear" class="quiet">清空</button>
+        </div>
+      </div>
+      <label class="field guest-field" for="guest">嘉宾称呼<span>选填</span></label>
+      <input id="guest" type="text" maxlength="40" autocomplete="off" placeholder="比如：林老师">
+      <label class="sr-only" for="card">粘贴访谈题目</label>
+      <textarea id="card" spellcheck="false" placeholder="每道题单独一行，比如：
+
+第一段：你是谁
+1. 先跟听众做个自我介绍吧。
+   追问：你现在具体在做什么？
+2. 带我们过一遍你最近一个普通工作日。
+【内部：这里要追问到几点下班】"></textarea>
+      <details class="settings">
+        <summary>检查规则</summary>
+        <div class="settings-body">
+          <label class="row" for="max-marks">每题最多几个问号
+            <input id="max-marks" type="number" min="1" max="9" value="2">
+          </label>
+          <label class="stack" for="words">不能让嘉宾看到的内部词（用逗号分开）
+            <textarea id="words" rows="3" spellcheck="false"></textarea>
+          </label>
+          <label class="check"><input id="check-counts" type="checkbox"> 检查每段是否有 8 到 10 道题</label>
+          <label class="check"><input id="check-money" type="checkbox"> 职业访谈：薪酬题放在第 2 段前 2 题</label>
+        </div>
+      </details>
+    </section>
+
+    <section class="panel result-panel" aria-labelledby="result-title">
+      <div class="panel-head">
+        <h2 id="result-title" class="sr-only">结果</h2>
+        <div class="tabs" role="tablist" aria-label="结果">
+          <button type="button" role="tab" id="tab-check" aria-controls="view-check" aria-selected="true">检查结果</button>
+          <button type="button" role="tab" id="tab-sheet" aria-controls="view-sheet" aria-selected="false" tabindex="-1">嘉宾题单</button>
+        </div>
+      </div>
+
+      <div id="view-check" role="tabpanel" aria-labelledby="tab-check">
+        <div id="summary" class="summary" aria-live="polite"></div>
+        <dl id="stats" class="stats"></dl>
+        <ol id="findings" class="findings"></ol>
+      </div>
+
+      <div id="view-sheet" role="tabpanel" aria-labelledby="tab-sheet" hidden>
+        <div id="leak-gate" class="leak-gate" hidden>
+          <p id="leak-text"></p>
+          <label class="check"><input id="leak-ok" type="checkbox"> 我看过了，这些词可以让嘉宾看到</label>
+        </div>
+        <div class="sheet-tools">
+          <label class="check"><input id="followups" type="checkbox" checked> 包含追问</label>
+          <div class="actions">
+            <button type="button" id="copy" class="primary">复制题单</button>
+            <button type="button" id="print">存为 PDF</button>
+            <button type="button" id="download">下载文本</button>
+          </div>
+        </div>
+        <p id="copy-status" class="copy-status" role="status"></p>
+        <article id="sheet" class="sheet"></article>
+      </div>
+    </section>
+  </div>
+
+  <section class="more">
+    <div>
+      <h2>想让 AI 帮你出题？</h2>
+      <p>这个检查器来自开源的 Open Podcast Kit。完整工具包还能调研嘉宾、生成访谈手卡、写邀约，并检查成片响度和字幕。</p>
+    </div>
+    <a class="button-link" href="https://github.com/coachbhuang/open-podcast-kit" rel="noopener">看完整工具包，觉得有用点个 Star</a>
+  </section>
+</main>
+
+<footer class="wrap foot">MIT 开源 · 示例嘉宾为虚构人物 · <a href="https://github.com/coachbhuang/open-podcast-kit/issues" rel="noopener">反馈问题</a>，请勿附带嘉宾信息</footer>
+
+<script src="prep-tool.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -12,6 +12,10 @@ It runs as a set of [Claude Code](https://claude.com/claude-code) skills. Once i
 
 ![The web prep-card editor: rewrite, delete and reorder questions, with checks on every save](docs/editor.png)
 
+## No install: use the web version
+
+[**Open the interview sheet checker**](https://coachbhuang.github.io/open-podcast-kit/) (interface in Chinese): paste your questions, see what needs fixing, and export a guest sheet without internal notes. No sign-up, and your text is processed only in your browser.
+
 ## Try it in 30 seconds
 
 No Claude Code needed, just Python 3.9+ (already on a Mac that has git). This uses the fictional guest in the repo (the demo card is in Chinese):
