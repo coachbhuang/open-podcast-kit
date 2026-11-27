@@ -41,10 +41,6 @@ The [open-podcast-kit repository](https://github.com/coachbhuang/open-podcast-ki
 
 这是一个给访谈类播客用的 Claude 插件，帮你做嘉宾调研、出个性化访谈手卡、写邀约和跟进消息。它只包含文字说明和参考资料，不安装也不运行任何程序。消息只出草稿，发送永远由你本人完成。自动检查、网页编辑器、响度校正和成片检查在[完整版项目](https://github.com/coachbhuang/open-podcast-kit)里。
 
-## Credits
-
-The optional transcript tool suggested for guest research, [podcast-transcript-txt-skill](https://github.com/KingJing1/podcast-transcript-txt-skill), is by @一龙小包子 (MIT).
-
 ## License
 
 [MIT](LICENSE)
